@@ -1,0 +1,22 @@
+<div class="login-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()" #loginform ="ngForm">
+      <div class="user-box">
+        <input type="text" name="" email required [(ngModel)]="email" name="email" #useremail ="ngModel" >
+        <label>Email</label>
+        <span *ngIf="useremail.invalid && useremail.touched" class="text-danger">Invalid Email</span>
+      </div>
+      <div class="user-box">
+        <input type="password" name="" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$" [(ngModel)]="password" name="password" #userpswd ="ngModel">
+        <label>Password</label>
+        <span *ngIf="userpswd.invalid && userpswd.touched" class="text-danger">Invalid Password</span>
+      </div>
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Login
+      </button>
+    </form>
+  </div>
